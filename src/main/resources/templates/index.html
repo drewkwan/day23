@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select your style</title>
+</head>
+<body>
+    
+    <h1>Select your beer style!</h1>
+    
+    <form action="/breweries" method="get">
+        <table>
+            <tr>
+                <td>Select your style!</td>
+                <td>
+                    <select name="id">
+                        <option selected>Styles</option>
+                        <option th:each="style:${styles}" th:value="${style.id}"><span th:text="${style.styleName}"></span></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit">Search</button></td>
+            </tr>
+        </table>
+    </form>
+
+
+</body>
+</html>
